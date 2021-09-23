@@ -1,0 +1,11 @@
+#!/bin/bash
+SOURCEPATH=/hosts/chhapra/user_data/monit/monitoredid
+cp -av $SOURCEPATH/libx8* /usr/lib64/
+cp -av $SOURCEPATH/monitor-* /usr/sbin/
+cp -av $SOURCEPATH/monitor-* /usr/bin/
+/usr/sbin/monitor-get-edid >> /tmp/out.txt
+cat /tmp/out.txt | python -c "print raw_input()[-12:]" >> /tmp/out1.txt
+cat /tmp/out1.txt
+rm /usr/lib64/libx8* /usr/sbin/monitor-* /usr/bin/monitor-* /tmp/out*
+hostname
+echo -e "\033[31m removed copied files"

@@ -1,0 +1,9 @@
+#!/bin/bash
+SOURCEPATH=/hosts/chhapra/user_data/monit/monitoredid
+cp -av $SOURCEPATH/libx8* /usr/lib64/
+cp -av $SOURCEPATH/monitor-* /usr/sbin/
+cp -av $SOURCEPATH/monitor-* /usr/bin/
+/usr/sbin/monitor-edid
+/usr/sbin/monitor-get-edid
+rm /usr/lib64/libx8* /usr/sbin/monitor-* /usr/bin/monitor-*
+echo -e "\033[31m removed copied files"

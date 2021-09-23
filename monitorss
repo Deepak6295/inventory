@@ -1,0 +1,1 @@
+sudo startx -- -logverbose 6 && grep "Serial Number String" /var/log/Xorg.2.log | cut -d : -f3 | sort | uniq >> /u/desh/out.txt && hostname >> /u/desh/out.txt
